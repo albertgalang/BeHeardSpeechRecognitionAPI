@@ -8,10 +8,12 @@ namespace BeHeardSpeechRecognitionAPI.Controllers
     public class SpeechController : ControllerBase
     {
         // POST api/<SpeechController>
+        [Route("recognizer")]
         [HttpPost]
-        public string Post([FromBody] string value)
+        public string SpeechToText([FromBody] string value)
         {
             var result = SpeechRecognition.Predict(value);
+
             return result; // should be a json string
         }
     }

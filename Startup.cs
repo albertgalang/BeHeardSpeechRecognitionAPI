@@ -27,6 +27,11 @@ namespace BeHeardSpeechRecognitionAPI
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddCors(options => options.AddDefaultPolicy(
+                builder => builder.WithOrigins("https://localhost:44347")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +50,8 @@ namespace BeHeardSpeechRecognitionAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
