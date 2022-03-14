@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using Vosk;
-using System.Speech;
-using System.Speech.Recognition;
 
 namespace BeHeardSpeechRecognitionAPI.Application
 {
@@ -42,5 +40,4 @@ namespace BeHeardSpeechRecognitionAPI.Application
             return prediction;
         }
     }
-
 }
